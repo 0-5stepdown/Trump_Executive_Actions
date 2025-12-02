@@ -17,7 +17,7 @@ The project was organized using the following workflow:
 
 Refer to sections "The theory behind K-means clustering" and "Implementation via object-oriented programming" in the project Jupyter notebook for details.
 
-[Link to project Jupyter notebook (raw)](https://github.com/0-5stepdown/Trump_Executive_Actions/tree/main/code)
+[Link to project Jupyter notebook (raw)](https://github.com/0-5stepdown/Trump_Executive_Actions/blob/main/code/K-means%20clustering.ipynb)
 
 [Link to project Jupyter notebook (nbviewer)](https://nbviewer.org/github/0-5stepdown/Trump_Executive_Actions/blob/ac50f8ab1a8ecfea2698bd2202340b8c85bf80cc/code/K-means%20clustering.ipynb)
 
