@@ -1,6 +1,6 @@
 # Project Overview
 
-Given the fast pace at which President Trump is announcing executive actions in his second term, it is not practical for a human to manually parse through a large corpus of documents to determine which public policy areas are being impacted. Therefore, a combination of latent semantic analysis and K-means clustering algorithms were used to group executive actions based on content similarity. Working professionals such as journalists, lawyers, and policy advisors can use the output of this project to quickly see the distribution of policy themes in the executive actions and inspect a sample set of documents before deciding to dive deeper into specific areas.
+Given the fast pace at which President Trump is announcing executive actions in his second term, it is not practical for a human to manually parse through a large corpus of documents to determine which public policy areas are being impacted. Therefore, a combination of latent semantic analysis and K-means clustering algorithms were used to group executive actions by policy themes based on content similarity. The output of this project allows the user to quickly see the distribution of policy themes in the executive actions and inspect a sample set of documents before deciding to dive deeper into specific areas.
 
 The project was organized using the following workflow:
 
@@ -34,9 +34,9 @@ Anyone interested in inspecting the data sources more closely can access the Fed
 
 [Link to Federal Register API documentation](https://www.federalregister.gov/reader-aids/developer-resources)
 
-The CSV file consistently has an empty space preceding the Federal Register document number. These were stripped out to make sure that the subsequent API requests work properly. 
+Note that the CSV file consistently has an empty space preceding the Federal Register document number. These were stripped out to make sure that the subsequent API requests work properly. 
 
-To retrieve the corpus of executive action documents, JSON metadata for each document were first obtained through API requests. Then, the JSON key containing the URL to the XML document was referenced for each document number to obtain the full text. Both were cached to avoid making repeated API requests.
+To retrieve the corpus of executive action documents, JSON metadata for each document were first obtained through API requests. Then, the JSON key containing the URL to the XML document was referenced to obtain the full text. Both were cached to avoid making repeated API requests.
 
 # Preprocess Text
 
@@ -51,7 +51,15 @@ After inspecting a few samples of the XML documents, the following text preproce
 7. Remove stopwords (e.g., "and", "the", "of", etc.), punctuations, and numbers from tokens
 8. Lemmatize (i.e., convert words to their root/base form (e.g., "better" converted to "good") tokens
 
-The clean corpus was cached to avoid having to run the text preprocessing function repeatedly.
+Here is an example of XML text before preprocessing:
+
+![dirty_text](diagrams/kmeans_dirty_text.png)
+
+And here is an example of fully processed and tokenized text:
+
+![clean_text](diagrams/kmeans_clean_text.png)
+
+The clean and tokenized corpus was cached to avoid having to run the text preprocessing function repeatedly.
 
 # Model Performance with TF-IDF Matrix vs. Latent Semantic Analysis
 
@@ -65,7 +73,11 @@ Therefore, latent semantic analysis (LSA) was used to reduce the dimensionality 
 
 # Results
 
-After assigning each executive action document to one of 15 clusters, sample documents located closest to each cluster center were selected for human inspection. The diagrams below describe the 15 policy themes that were identified by the model, as well as the distribution of executive action documents across the 15 policy themes.
+After assigning each executive action document to one of 15 clusters, sample documents located closest to each cluster center were selected for human inspection. See below a screenshot of example document clusters:
+
+![sample_clusters](diagrams/kmeans_sample_clusters.png)
+
+The diagrams below describe the 15 policy themes that were identified by the model, as well as the distribution of executive action documents across the 15 policy themes.
 
 ![kmeans_policy_count](diagrams/kmeans_policy_count.png)
 
