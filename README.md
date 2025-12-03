@@ -1,6 +1,6 @@
 # Project Overview
 
-Given the fast pace at which President Trump is announcing executive actions in his second term, it is not practical for a human to manually parse through a large corpus of documents to determine which public policy areas are being impacted. Therefore, a combination of latent semantic analysis and K-means clustering algorithms were used to group executive actions by policy themes based on content similarity. The output of this project allows the user to quickly see the distribution of policy themes in the executive actions and inspect a sample set of documents before deciding to dive deeper into specific areas.
+Given the fast pace at which President Trump is announcing executive actions in his second term, it is not practical for a human to manually parse through a large corpus of documents to determine which public policy areas are being impacted. Therefore, this project utilized a combination of latent semantic analysis and K-means clustering algorithms to group executive actions by policy themes based on content similarity. The output of this project allows the user to quickly see the distribution of policy themes in the executive actions and inspect a sample set of documents before deciding to dive deeper into specific areas.
 
 The project was organized using the following workflow:
 
@@ -61,7 +61,7 @@ And here is an example of fully processed and tokenized text:
 
 The clean and tokenized corpus was cached to avoid having to run the text preprocessing function repeatedly.
 
-# Model Performance with TF-IDF Matrix vs. Latent Semantic Analysis
+# Model Performance with TF-IDF vs. Latent Semantic Analysis
 
 The TF-IDF matrix generated from the corpus indicated that there were a total of 210 executive actions containing 6,329 unique words as of October 20, 2025. For initial experimentation, silhouette scores were calculated on K-means clustering models with the number of clusters ranging from 2 to 15 (15 was set as the ceiling to approximate the number of congressional committees that specialize in policy areas). Due to the high dimensionality of the data, the models all resulted in poor silhouette scores, which indicated that the K-means clustering algorithm was having difficulty differentiating the content in the executive action documents. 
 
