@@ -8,7 +8,7 @@ The project was organized using the following workflow:
 2. Walk through a simplified implementation of the K-means clustering algorithm using Python object-oriented programming (OOP) to demonstrate how machine learning libraries like scikit-learn work under the hood
 3. Collect metadata and data related to the executive actions from the Federal Register website and API
 4. Preprocess text
-5. Convert corpus into a TF-IDF matrix to represent text quantiatively
+5. Convert corpus into a TF-IDF matrix to represent text quantitatively
 6. Implement latent semantic analysis to reduce data dimensionality and discover policy themes
 7. Train and evaluate the K-means clustering model
 8. Assign policy themes to clusters and compute the distribution of policy themes in the executive actions
